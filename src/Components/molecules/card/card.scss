@@ -1,0 +1,9 @@
+.card{
+    &__container{
+        background-color: rgba(30,57,50,255);
+    }
+    &__image{
+        width: 50px;
+        height: 50px;
+    }
+}

@@ -1,7 +1,11 @@
 import React from 'react'
 
-export const image = () => {
+const image = () => {
   return (
-    <div>image</div>
+    <div className='image__container'>
+     <image ></image>
+    </div>
   )
 }
+
+export default image
