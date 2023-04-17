@@ -1,12 +1,31 @@
 .button {
-    background-color: rgba(30,57,50,255);
+  background-color: var(--main);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  height: 20px;
+  font-size: 15px;
+  border: white;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  &:hover {
+    opacity: 0.1;
+  }
+  &--circle {
+    padding: 0px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+  &--secondary {
     color: white;
-    border: none;
-    padding: 10px;
-    font-size: 15px;
-    border: white;
-    border-radius: 5px;
-    &--small{
-        padding: 5px;
-    }
+    background-color: var(--minor);
+    border: 2px solid var(--secondary);
+  }
+  &--medium {
+    padding: 20px;
+    height: 30px;
+  }
 }

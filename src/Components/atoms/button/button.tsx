@@ -1,26 +1,32 @@
 
 import './button.scss'
-import React,{ FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 
 export interface ButtonProps {
-    children?: React.ReactNode
-    color: 'primary' | 'secondary'
-    size: 'small' | 'medium'
-    onClick?: () => void
+    children: ReactNode;
+    color?: 'primary' | 'secondary';
+    size?: 'small' | 'medium';
+    isCircle?: boolean;
+    onClick: () => void
 }
 
 
-export const Button: FC<ButtonProps> = ({ onClick = () => { }, size, children }) => {
+export const Button: FC<ButtonProps> = ({
+    color = 'primary',
+    size = 'small',
+    isCircle,
+    children,
+    onClick,
+}) => {
+    let buttonClass = 'button';
+
     return (
-        <div>
-            <button
-                className={`button ${size === 'small' && 'button--small'}`}
-                onClick={() => onClick()}
-            >
-                {children}
-            </button>
-        </div>
+
+        <button className={buttonClass} onClick={onClick}>
+            {children}
+        </button>
+
     )
 }
 
