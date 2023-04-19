@@ -11,9 +11,12 @@ export const DefaulMessage: FC<DefaulMessageProps> = ({ children }) => {
       <div>
         <img
           className='defaulMessage__icon'
-          src='warning'
+          src={warning}
           alt='Warning icon'
         />
+      </div>
+      <div>
+        <span className='defaultMessange__messange'>{children}</span>
       </div>
     </div>
   )
