@@ -3,13 +3,19 @@ import React, { FC } from 'react'
 interface NumbersProps {
     numero: number,
 }
-export const Numbers: FC<NumbersProps> = ({ numero, }) => {
-    const myArray = [
-        1, 6, 4, 3, 8, 9
-    ]
+export const Numbers: FC<NumbersProps> = ({ numero }) => {
+
+    const returnNumber = [];
+    for (let i = numero; i >= 1; i--) {
+        returnNumber.push(i);
+    }
+
     return (
-        <div>{myArray.map(() => {
-            return 'p'
-        })}</div>
+        <div>
+            {
+                returnNumber.map((num) => (
+                    <p key={num}></p>
+                ))}
+        </div>
     )
 }

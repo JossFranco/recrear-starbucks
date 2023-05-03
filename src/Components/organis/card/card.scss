@@ -1,9 +1,28 @@
-.card{
-    &__container{
-        background-color: rgba(30,57,50,255);
-    }
-    &__image{
-        width: 50px;
-        height: 50px;
-    }
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 25px;
+  padding: 25px;
+
+  &__container {
+    background-color: var(--main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 15px;
+    width: 25vw;
+    height: 27vw;
+    border: 2px solid var(--main);
+    border-radius: 30px;
+  }
+  &__image {
+    border-radius: 30px;
+    width: 18vw;
+    height: 15vw;
+  }
+  &__description {
+    font-family: "Times New Roman", Times, serif;
+    color: gray;
+  }
 }
