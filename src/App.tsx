@@ -11,7 +11,7 @@ const App = () => {
     <>
       <SearchBar />
       <Card />
-      <Numbers numero={5} />
+      <Numbers numero={10} />
     </>
   )
 }

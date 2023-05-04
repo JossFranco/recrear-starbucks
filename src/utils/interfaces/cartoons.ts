@@ -1,4 +1,5 @@
 export interface Cartoons {
+  image: string | undefined;
   info: {
     count: number;
     pages: number;

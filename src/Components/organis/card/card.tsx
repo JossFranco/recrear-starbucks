@@ -6,6 +6,7 @@ import './card.scss'
 
 const Card = () => {
 
+
     const [characters, setCharacters] = useState<Cartoons[]>([])
 
     const getData = async () => {

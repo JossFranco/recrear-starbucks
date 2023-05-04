@@ -1,11 +1,12 @@
 body {
+  background-image: url("/Users/bpuio01610043lm/Desktop/practica/recrear-rick-and-morty/src/asseerts/wallpaper.jpeg");
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 :root {
-  --main: #76d7c4;
+  --main: #bbe0f2;
   --minor: #f4d03f;
   --error: #e74c3c;
 }

@@ -17,8 +17,8 @@ const SearchBar: FC<searchBarProps> = ({ onSearch, placeHolder, messageError }) 
         onSearch(search);
     }
 
-    const handleChange = (text: string) => {
-        setSearch(text);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearch(e.target.value);
     };
     return (
         <div className='searchBar' >
