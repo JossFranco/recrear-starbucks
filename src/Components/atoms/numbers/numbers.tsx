@@ -1,26 +1,33 @@
-import React, { FC } from 'react'
-import './number.scss'
+import React, { FC, useState } from "react";
+import "./number.scss";
 interface NumbersProps {
-    numero: number,
-    onClick?: () => void,
-
+    numero: number;
 }
-export const Numbers: FC<NumbersProps> = ({ numero, onClick }) => {
+export const Numbers: FC<NumbersProps> = ({ numero }) => {
+    const [colorNumber, setColorNumber] = useState<number>(0);
 
     const returnNumber = [];
     for (let i = numero; i >= 1; i--) {
-        returnNumber.push(i);
+        returnNumber.unshift(i);
     }
 
-    const handleOnClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
-        // Lógica para manejar el clic del botón
+    const handleOnClick = (myNumber: number) => {
+        setColorNumber(myNumber);
+        console.log("seleccionaste el circulo número", myNumber);
     };
+
     return (
-        <div className='number__container'>
-            {
-                returnNumber.map((num) => (
-                    <button onClick={handleOnClick} className='number__numeros' key={num}></button>
-                ))}
+        <div className="number__container">
+            {returnNumber.map((num) => (
+                <button
+                    onClick={() => handleOnClick(num)}
+                    style={{ backgroundColor: num === colorNumber ? 'blue' : 'red' }}
+                    className="number__numeros"
+                    key={num}
+                >
+                    {num}
+                </button>
+            ))}
         </div>
-    )
-}
+    );
+};

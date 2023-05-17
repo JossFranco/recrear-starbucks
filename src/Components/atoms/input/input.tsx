@@ -14,10 +14,12 @@ const Input: FC<InputProps> = ({
     placeHolder = "Text",
     onChange,
 }) => {
+
     const handleOnChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
         const text = e.target.value;
         onChange?.(text);
     };
+
 
     let inputClasses = "input__element"
     if (!!messageError) inputClasses += " input__element--error"

@@ -1,4 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+
+const card = () => {
+    return (
+        <div>
+
+        </div>
+    )
+}
+
+export default card
+
+/* import React, { useState, useEffect } from 'react'
 import { isTemplateMiddle } from 'typescript';
 import { getCharactersRickAndMorty } from '../../../services/rick-and-morty/rick-and-morty';
 import { Cartoons } from '../../../utils/interfaces/cartoons';
@@ -38,3 +50,4 @@ const Card = () => {
 }
 
 export default Card
+ */

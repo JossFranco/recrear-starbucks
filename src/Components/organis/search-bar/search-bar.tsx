@@ -2,6 +2,8 @@ import React, { FC, useState } from 'react'
 import { Button } from '../../atoms/button/button'
 import Input from '../../atoms/input/input'
 import './search-bar.scss'
+import { getCharactersRickAndMorty } from '../../../services/rick-and-morty/rick-and-morty';
+import { Cartoons } from '../../../utils/interfaces/cartoons';
 
 
 
@@ -10,27 +12,27 @@ export interface searchBarProps {
     placeHolder?: string;
     messageError?: string;
 }
-const SearchBar: FC<searchBarProps> = ({ onSearch, placeHolder, messageError }) => {
-    const [search, setSearch] = useState('');
+const SearchBar: FC<searchBarProps> = ({ placeHolder, messageError }) => {
+    const [currentValue, setCurrentValue] = useState<string>("");
 
-    const handleSearch = () => {
-        onSearch(search);
-    }
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearch(e.target.value);
+    const onChangeText = (text: string) => {
+        setCurrentValue(text);
+        console.log(currentValue)
     };
+
+
     return (
         <div className='searchBar' >
             <div className='searchBar__container'>
                 <Input
-                    onChange={handleChange}
-                    placeHolder={placeHolder || '🔍 Buscar'}
+                    onChange={onChangeText}
+                    placeHolder={placeHolder}
                     messageError={messageError}
                 />
             </div>
             <div className='searchBar__button'>
-                <Button onClick={handleSearch}>Buscar</Button>
+                <Button onClick={() => { }}>Buscar</Button>
             </div>
         </div>
     )

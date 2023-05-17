@@ -9,9 +9,9 @@ const App = () => {
 
   return (
     <>
-      <SearchBar />
-      <Card />
-      <Numbers numero={10} />
+      {/*       <SearchBar placeHolder=' 🔍 Buscar' />
+      <Card /> */}
+      <Numbers numero={20} />
     </>
   )
 }
