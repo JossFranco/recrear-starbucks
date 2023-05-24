@@ -1,28 +1,18 @@
 .card {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   margin: 25px;
   padding: 25px;
-
-  &__container {
-    background-color: var(--main);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 15px;
-    padding: 15px;
-    width: 25vw;
-    height: 27vw;
-    border: 2px solid var(--main);
-    border-radius: 30px;
+  background-color: rgba(139, 218, 238, 0.924);
+  width: 20vw;
+  height: 25vw;
+  border-radius: 10px;
+  text-align: center;
+  &__title {
+    font-family: "Times New Roman", Times, serif;
+    color: gray;
   }
   &__image {
     border-radius: 30px;
     width: 18vw;
     height: 15vw;
-  }
-  &__description {
-    font-family: "Times New Roman", Times, serif;
-    color: gray;
   }
 }
