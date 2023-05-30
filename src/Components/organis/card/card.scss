@@ -1,18 +1,37 @@
 .card {
   margin: 25px;
   padding: 25px;
-  background-color: rgba(139, 218, 238, 0.924);
+  background-color: #a1d6e2;
   width: 20vw;
-  height: 25vw;
+  height: 20vw;
   border-radius: 10px;
   text-align: center;
   &__title {
-    font-family: "Times New Roman", Times, serif;
-    color: gray;
+    font-family: Vegur, "PT Sans", Verdana, sans-serif;
+    color: black;
+    font-size: 20px;
   }
   &__image {
     border-radius: 30px;
     width: 18vw;
     height: 15vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    margin: 10px;
+    padding: 10px;
+    width: 50vw;
+    height: 40vw;
+
+    &__title {
+      font-size: 12px;
+    }
+    &__image {
+      border-radius: 5px;
+      width: 40vw;
+      height: 30vw;
+    }
   }
 }

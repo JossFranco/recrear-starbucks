@@ -18,8 +18,7 @@ export const Stepper: FC<NumbersProps> = ({ stepNumber, currentStep }) => {
         <div className="steps__container">
             {returnNumber.map((num) => (
                 <button
-                    //     onClick={() => handleOnClick(num)}
-                    style={{ backgroundColor: num === currentStep ? '#84b6f4' : num < currentStep ? "green" : 'gray' }}
+                    style={{ backgroundColor: num === currentStep ? '#84b6f4' : num < currentStep ? "green" : '#bcbabe' }}
                     className="steps__numeros"
                     key={num}
                 >

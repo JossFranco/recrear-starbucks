@@ -1,20 +1,28 @@
 .steps {
-  margin: 25px;
-  padding: 25px;
+  margin: 30px;
+  padding: 30px;
   &__container {
-    margin: 25px;
-    padding: 25px;
+    margin: 35px;
+    padding: 35px;
     display: flex;
     flex-direction: row;
-    gap: 25px;
+    gap: 30px;
   }
   &__numeros {
     background-color: var(--main);
     border: none;
-    font-family: "Times New Roman", Times, serif;
-    color: gray;
+    color: black;
     border-radius: 100vh;
     width: 5vw;
     height: 5vw;
+    font-family: Vegur, "PT Sans", Verdana, sans-serif;
+  }
+}
+@media (max-width: 600px) {
+  .steps {
+    &__numeros {
+      width: 15vw;
+      height: 15vw;
+    }
   }
 }

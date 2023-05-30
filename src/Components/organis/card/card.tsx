@@ -13,9 +13,9 @@ const Card: FC<CardProps> = ({ nombre, url }) => {
 
     return (
         <div className='card'>
-            <h2 className='card__title'>
+            <h1 className='card__title'>
                 {nombre}
-            </h2>
+            </h1>
             <img className='card__image' src={url} alt='imagen' />
         </div >
     )
