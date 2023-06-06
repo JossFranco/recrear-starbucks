@@ -6,7 +6,7 @@ import React, { FC, ReactNode } from 'react'
 export interface ButtonProps {
     children: ReactNode;
     color?: 'primary' | 'secondary';
-    onClick: () => void
+    onClick: () => void;
 }
 
 

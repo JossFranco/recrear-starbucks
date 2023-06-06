@@ -1,9 +1,10 @@
 import "./App.scss";
-import Card from "./Components/organis/card/card";
-import { Stepper } from "./Components/atoms/Steps/Steps";
+import { Stepper } from "./Components/atoms/steps/Steps";
 import React, { useState } from "react";
-import { Button } from "./Components/atoms/button/button";
-import Input from "./Components/atoms/input/input";
+import StepsOne from './Components/template/steps-one/steps-one';
+import StepsTwo from "./Components/template/steps-two/steps-two";
+import StepsThree from "./Components/template/steps-three/steps-three";
+
 
 const App = () => {
   const [posicionActual, setPosicionActual] = useState<number>(1);
@@ -26,56 +27,37 @@ const App = () => {
     setInputText(text)
   }
 
-
-
   return (
     <div className="app__container">
       <Stepper stepNumber={3} currentStep={posicionActual} />
 
       {posicionActual === 1 && (
-        <>
-          <Card
-            nombre="IMAGEN 1"
-            url="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        <StepsOne
+          onChange={captureText}
+          messageError={inputText === '' ? 'Debes ingresar un texto' : ''}
+          onNext={nextStep}
+        />
+      )
+      }
+      {
+        posicionActual === 2 && (
+          <StepsTwo
+            seHaConsumido={seHaConsumido === undefined ? 'Se debe consumir una API' : 'Se ha consumido una API'}
+            onStepLastTwo={lastStep}
+            oneStepNextTwo={nextStep} />
+        )
+      }
+      {
+        posicionActual === 3 && (
+          <StepsThree
+            inputText={inputText}
+            onClickLast={lastStep}
+            onClickMessage={messageExecute}
           />
-          <Input
-            onChange={captureText}
-            messageError={inputText === '' ? 'Debes ingresar un texto' : ''}
-          ></Input>
-          <Button onClick={nextStep}>Continuar</Button>
-        </>
-      )}
-      {posicionActual === 2 && (
-        <>
-          {seHaConsumido === undefined ? <p>Se debe consumir una API</p> : <p>Se ha consumido una API</p>}
-          <Card
-            nombre="IMAGEN2"
-            url="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
-          />
-          <div className="app__buttonContainer">
-            <Button onClick={lastStep}>Regresar</Button>
-            <Button color="secondary" onClick={nextStep}>Continuar</Button>
+        )
+      }
 
-          </div>
-
-        </>
-      )}
-      {posicionActual === 3 && (
-        <>
-          <Card
-            nombre="IMAGEN3"
-            url="https://rickandmortyapi.com/api/character/avatar/3.jpeg"
-          />
-          <p className="app__text">{inputText}</p>
-
-          <div className="app__buttonContainer">
-            <Button onClick={lastStep}>Regresar</Button>
-            <Button color="secondary" onClick={messageExecute}>Listo</Button>
-          </div>
-        </>
-      )}
-
-    </div>
+    </div >
   );
 };
 
