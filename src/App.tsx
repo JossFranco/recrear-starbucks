@@ -42,7 +42,7 @@ const App = () => {
       {
         posicionActual === 2 && (
           <StepsTwo
-            seHaConsumido={seHaConsumido === undefined ? 'Se debe consumir una API' : 'Se ha consumido una API'}
+            seHaConsumidoApiMessage={seHaConsumido === undefined ? 'Se debe consumir una API' : 'Se ha consumido una API'}
             onStepLastTwo={lastStep}
             oneStepNextTwo={nextStep} />
         )

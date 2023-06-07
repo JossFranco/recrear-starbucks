@@ -1,18 +1,36 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { Button } from '../../atoms/button/button'
 import Card from '../../atoms/card/card';
+import { getPersonaje } from '../../../services/services';
+
 
 
 interface SteperTwoProps {
-    seHaConsumido: string;
+    seHaConsumidoApiMessage: string;
     onStepLastTwo: () => void;
     oneStepNextTwo: () => void;
 }
 
-const StepsTwo: FC<SteperTwoProps> = ({ seHaConsumido, onStepLastTwo, oneStepNextTwo }) => {
+
+const StepsTwo: FC<SteperTwoProps> = ({ seHaConsumidoApiMessage, onStepLastTwo, oneStepNextTwo }) => {
+
+    const [personaje, setPersonaje] = useState();
+
+    useEffect(() => {
+        getPersonaje('Rick')
+
+            .then((personaje) => setPersonaje(personaje))
+
+            .catch(() => {
+                'Se debe consumir una API'
+
+            })
+
+    }, [])
+
     return (
         <>
-            <p>{seHaConsumido}</p>
+            <p>{seHaConsumidoApiMessage}</p>
             <Card
                 nombre="Imagen 2"
                 url="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
