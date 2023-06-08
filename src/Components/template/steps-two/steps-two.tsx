@@ -6,31 +6,31 @@ import { getPersonaje } from '../../../services/services';
 
 
 interface SteperTwoProps {
-    seHaConsumidoApiMessage: string;
+    seHaConsumidoApiMessage: Object | null;
+    flagConsumoApiMessage: (personaje: Object) => void;
     onStepLastTwo: () => void;
     oneStepNextTwo: () => void;
 }
 
 
-const StepsTwo: FC<SteperTwoProps> = ({ seHaConsumidoApiMessage, onStepLastTwo, oneStepNextTwo }) => {
+const StepsTwo: FC<SteperTwoProps> = ({ flagConsumoApiMessage, seHaConsumidoApiMessage, onStepLastTwo, oneStepNextTwo }) => {
 
-    const [personaje, setPersonaje] = useState();
+
 
     useEffect(() => {
-        getPersonaje('Rick')
+        if (seHaConsumidoApiMessage === null) {
+            getPersonaje('rick').then((personaje) => {
+                console.log(personaje);
+                flagConsumoApiMessage(personaje);
+            });
 
-            .then((personaje) => setPersonaje(personaje))
-
-            .catch(() => {
-                'Se debe consumir una API'
-
-            })
+        }
 
     }, [])
 
     return (
         <>
-            <p>{seHaConsumidoApiMessage}</p>
+            <p>{seHaConsumidoApiMessage === null ? 'Buscando a personaje' : 'Hemos encontrado a personaje'}</p>
             <Card
                 nombre="Imagen 2"
                 url="https://rickandmortyapi.com/api/character/avatar/2.jpeg"

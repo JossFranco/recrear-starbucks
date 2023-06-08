@@ -9,7 +9,7 @@ import StepsThree from "./Components/template/steps-three/steps-three";
 const App = () => {
   const [posicionActual, setPosicionActual] = useState<number>(1);
   const [inputText, setInputText] = useState<string>('');
-  const [seHaConsumido, setSeHaConsumido] = useState<Object>({});
+  const [seHaConsumido, setSeHaConsumido] = useState<Object | null>(null);
 
 
   const nextStep = () => {
@@ -26,7 +26,11 @@ const App = () => {
   const captureText = (text: string) => {
     setInputText(text)
   }
+  const flagConsumoApiMessage = (personaje: Object) => {
+    setSeHaConsumido(personaje)
 
+
+  }
   return (
     <div className="app__container">
       <Stepper stepNumber={3} currentStep={posicionActual} />
@@ -42,7 +46,9 @@ const App = () => {
       {
         posicionActual === 2 && (
           <StepsTwo
-            seHaConsumidoApiMessage={seHaConsumido === undefined ? 'Se debe consumir una API' : 'Se ha consumido una API'}
+
+            flagConsumoApiMessage={flagConsumoApiMessage}
+            seHaConsumidoApiMessage={seHaConsumido}
             onStepLastTwo={lastStep}
             oneStepNextTwo={nextStep} />
         )

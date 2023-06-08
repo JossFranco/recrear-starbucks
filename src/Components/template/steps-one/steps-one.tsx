@@ -20,6 +20,7 @@ const StepsOne: React.FC<StepsOneProps> = ({ onChange, messageError, onNext }) =
             />
             <Input
                 onChange={onChange}
+                placeHolder='Buscar personaje'
                 messageError={messageError}
             ></Input>
             <Button onClick={onNext}>Continuar</Button>
