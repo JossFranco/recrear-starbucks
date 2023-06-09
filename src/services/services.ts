@@ -1,5 +1,4 @@
 import axios from "axios";
-import { apiRest } from "../utils/interfaces/interfaces";
 
 /* export const getService = async (): Promise<apiRest[]> => {
   try {

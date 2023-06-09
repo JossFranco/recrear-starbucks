@@ -8,9 +8,9 @@ import StepsThree from "./Components/template/steps-three/steps-three";
 
 const App = () => {
   const [posicionActual, setPosicionActual] = useState<number>(1);
-  const [inputText, setInputText] = useState<string>('');
+  const [inputText, setInputText] = useState<string | string[]>('');
   const [seHaConsumido, setSeHaConsumido] = useState<Object | null>(null);
-
+  const [personaje, setPersonaje] = useState<Object | null>(null);
 
   const nextStep = () => {
     setPosicionActual(posicionActual + 1)
@@ -46,7 +46,8 @@ const App = () => {
       {
         posicionActual === 2 && (
           <StepsTwo
-
+            setPersonaje={setPersonaje}
+            inputText={inputText}
             flagConsumoApiMessage={flagConsumoApiMessage}
             seHaConsumidoApiMessage={seHaConsumido}
             onStepLastTwo={lastStep}
@@ -57,6 +58,8 @@ const App = () => {
         posicionActual === 3 && (
           <StepsThree
             inputText={inputText}
+            name=''
+            image=''
             onClickLast={lastStep}
             onClickMessage={messageExecute}
           />

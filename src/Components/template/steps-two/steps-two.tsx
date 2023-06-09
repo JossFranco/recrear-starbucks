@@ -10,17 +10,20 @@ interface SteperTwoProps {
     flagConsumoApiMessage: (personaje: Object) => void;
     onStepLastTwo: () => void;
     oneStepNextTwo: () => void;
+    inputText: string;
+    setPersonaje: Object;
 }
 
 
-const StepsTwo: FC<SteperTwoProps> = ({ flagConsumoApiMessage, seHaConsumidoApiMessage, onStepLastTwo, oneStepNextTwo }) => {
+const StepsTwo: FC<SteperTwoProps> = ({ flagConsumoApiMessage, seHaConsumidoApiMessage, onStepLastTwo, oneStepNextTwo, inputText, setPersonaje }) => {
 
 
 
     useEffect(() => {
         if (seHaConsumidoApiMessage === null) {
-            getPersonaje('rick').then((personaje) => {
+            getPersonaje(inputText).then((personaje) => {
                 console.log(personaje);
+
                 flagConsumoApiMessage(personaje);
             });
 
@@ -30,9 +33,8 @@ const StepsTwo: FC<SteperTwoProps> = ({ flagConsumoApiMessage, seHaConsumidoApiM
 
     return (
         <>
-            <p>{seHaConsumidoApiMessage === null ? 'Buscando a personaje' : 'Hemos encontrado a personaje'}</p>
+            <p>{seHaConsumidoApiMessage === null ? `Buscando a  ${inputText}` : `Hemos encontrado a ${inputText}`}</p>
             <Card
-                nombre="Imagen 2"
                 url="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
             />
             <div className="app__buttonContainer">

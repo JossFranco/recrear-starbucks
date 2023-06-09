@@ -3,10 +3,10 @@ import './card.scss'
 
 
 interface CardProps {
-    nombre: string,
+    name?: string,
     url: string,
 }
-const Card: FC<CardProps> = ({ nombre, url }) => {
+const Card: FC<CardProps> = ({ name, url }) => {
 
 
 
@@ -14,7 +14,7 @@ const Card: FC<CardProps> = ({ nombre, url }) => {
     return (
         <div className='card'>
             <h1 className='card__title'>
-                {nombre}
+                {name}
             </h1>
             <img className='card__image' src={url} alt='imagen' />
         </div >
@@ -22,5 +22,6 @@ const Card: FC<CardProps> = ({ nombre, url }) => {
 }
 
 export default Card
+
 
 

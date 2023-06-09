@@ -15,7 +15,6 @@ const StepsOne: React.FC<StepsOneProps> = ({ onChange, messageError, onNext }) =
     return (
         <>
             <Card
-                nombre='Imagen 1'
                 url='https://rickandmortyapi.com/api/character/avatar/1.jpeg'
             />
             <Input

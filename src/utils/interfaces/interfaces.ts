@@ -1,5 +1,14 @@
-export interface apiRest {
-  id: number;
+export interface Personaje {
+  created: string;
+  episode: string;
+  gender: string;
+  id: string;
+  image: string;
+  location: string;
   name: string;
-  email: string;
+  origin: string;
+  species: string;
+  status: string;
+  type: string;
+  url: string;
 }
