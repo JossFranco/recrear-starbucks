@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Card from '../../atoms/card/card';
 import Input from '../../atoms/input/input';
 import { Button } from '../../atoms/button/button';

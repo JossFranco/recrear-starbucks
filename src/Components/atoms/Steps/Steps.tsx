@@ -1,5 +1,7 @@
 import React, { FC, } from "react";
 import "./Steps.scss";
+
+
 interface NumbersProps {
     stepNumber: number;
     currentStep: number;

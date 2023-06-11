@@ -4,13 +4,14 @@ import React, { useState } from "react";
 import StepsOne from './Components/template/steps-one/steps-one';
 import StepsTwo from "./Components/template/steps-two/steps-two";
 import StepsThree from "./Components/template/steps-three/steps-three";
+import { Character } from "./utils/interfaces/interfaces";
 
 
 const App = () => {
   const [posicionActual, setPosicionActual] = useState<number>(1);
-  const [inputText, setInputText] = useState<string | string[]>('');
-  const [seHaConsumido, setSeHaConsumido] = useState<Object | null>(null);
-  const [personaje, setPersonaje] = useState<Object | null>(null);
+  const [nameCharacter, setNameCharacter] = useState<string>('');
+  const [character, setCharacter] = useState<Character | null>(null);
+
 
   const nextStep = () => {
     setPosicionActual(posicionActual + 1)
@@ -23,11 +24,11 @@ const App = () => {
     alert("✅¡Terminaste la tarea con éxito!");
   }
 
-  const captureText = (text: string) => {
-    setInputText(text)
+  const captureNameCharacter = (text: string) => {
+    setNameCharacter(text)
   }
-  const flagConsumoApiMessage = (personaje: Object) => {
-    setSeHaConsumido(personaje)
+  const captureCharacter = (character: Character) => {
+    setCharacter(character)
 
 
   }
@@ -37,8 +38,8 @@ const App = () => {
 
       {posicionActual === 1 && (
         <StepsOne
-          onChange={captureText}
-          messageError={inputText === '' ? 'Debes ingresar un texto' : ''}
+          onChange={captureNameCharacter}
+          messageError={nameCharacter === '' ? 'Debes ingresar un texto' : ''}
           onNext={nextStep}
         />
       )
@@ -46,10 +47,10 @@ const App = () => {
       {
         posicionActual === 2 && (
           <StepsTwo
-            setPersonaje={setPersonaje}
-            inputText={inputText}
-            flagConsumoApiMessage={flagConsumoApiMessage}
-            seHaConsumidoApiMessage={seHaConsumido}
+            setCharacter={setCharacter}
+            inputText={nameCharacter}
+            captureCharacter={captureCharacter}
+            character={character}
             onStepLastTwo={lastStep}
             oneStepNextTwo={nextStep} />
         )
@@ -57,9 +58,8 @@ const App = () => {
       {
         posicionActual === 3 && (
           <StepsThree
-            inputText={inputText}
-            name=''
-            image=''
+            character={character}
+            inputText={nameCharacter}
             onClickLast={lastStep}
             onClickMessage={messageExecute}
           />

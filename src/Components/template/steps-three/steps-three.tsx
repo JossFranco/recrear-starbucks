@@ -1,23 +1,22 @@
 import React, { FC } from 'react'
-import { Personaje } from '../../../utils/interfaces/interfaces'
+import { Character } from '../../../utils/interfaces/interfaces'
 import { Button } from '../../atoms/button/button'
 import Card from '../../atoms/card/card'
 
 
 interface StepThreeProps {
-    onClickLast: () => void
-    onClickMessage: () => void
-
-    inputText: string
+    onClickLast: () => void;
+    onClickMessage: () => void;
+    character: Character | null;
+    inputText: string;
 }
 
-const StepsThree: FC<StepThreeProps> = ({ onClickLast, onClickMessage, inputText }) => {
-    console.log(inputText)
+const StepsThree: FC<StepThreeProps> = ({ onClickLast, onClickMessage, character }) => {
     return (
         <>
             <Card
-                name={item.name}
-                url={item.image}
+                name={character?.name}
+                url={character?.image ?? ''}
             />
 
             <div className="app__buttonContainer">
