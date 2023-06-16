@@ -29,8 +29,6 @@ const App = () => {
   }
   const captureCharacter = (character: Character) => {
     setCharacter(character)
-
-
   }
   return (
     <div className="app__container">
