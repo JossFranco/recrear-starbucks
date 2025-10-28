@@ -1,7 +1,6 @@
 .button {
   background-color: var(--main);
   color: black;
-  border: none;
   cursor: pointer;
   padding: 10px;
   font-size: 15px;
@@ -24,5 +23,12 @@
   .button {
     width: 15vw;
     height: 10vw;
+  }
+}
+@media (max-width: 480px) {
+  .button {
+    width: 30vw;
+    height: 12vw;
+    font-size: 12px;
   }
 }

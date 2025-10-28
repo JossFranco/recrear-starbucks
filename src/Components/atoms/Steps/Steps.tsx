@@ -1,4 +1,4 @@
-import React, { FC, } from "react";
+/* import React, { FC, } from "react";
 import "./Steps.scss";
 
 
@@ -10,7 +10,7 @@ export const Stepper: FC<NumbersProps> = ({ stepNumber, currentStep }) => {
 
 
     const returnNumber = [];
-    for (let i = stepNumber; i >= 1; i--) {
+    for (let i = stepNumber; i >= 1; i--)
         returnNumber.unshift(i);
     }
 
@@ -30,3 +30,4 @@ export const Stepper: FC<NumbersProps> = ({ stepNumber, currentStep }) => {
         </div>
     );
 };
+ */

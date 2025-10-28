@@ -1,6 +1,6 @@
 import "./App.scss";
-import { Stepper } from "./Components/atoms/steps/Steps";
-import React, { useState } from "react";
+//import { Stepper } from "./Components/atoms/steps/Steps";
+import { useState } from "react";
 import StepsOne from './Components/template/steps-one/steps-one';
 import StepsTwo from "./Components/template/steps-two/steps-two";
 import StepsThree from "./Components/template/steps-three/steps-three";
@@ -32,7 +32,7 @@ const App = () => {
   }
   return (
     <div className="app__container">
-      <Stepper stepNumber={3} currentStep={posicionActual} />
+{/*       <Stepper stepNumber={3} currentStep={posicionActual} /> */}
 
       {posicionActual === 1 && (
         <StepsOne
